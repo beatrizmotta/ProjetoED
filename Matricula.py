@@ -1,7 +1,18 @@
 import random
 from MenuPrincipal import menu_Principal
 
-#Esta função é chamada quando o usuário apresenta uma entrada inválida
+def gerar_numeromatricula(alunos):
+    number = random.randint(10000000, 20000000)
+    i = 0
+    while (i < len(alunos)):
+        if (number == alunos[i]["matricula"]):
+            i = 0 
+            number = random.randint(10000000, 20000000)
+        else:
+            i += 1
+    return number   
+
+#Esta função é chamada quando o usuário apresenta uma entrada inválida]
 def tente_novamente(inicio):
 
     print("------------------------------------------------\n")
